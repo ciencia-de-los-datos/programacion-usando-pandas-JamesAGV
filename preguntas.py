@@ -52,7 +52,8 @@ def pregunta_03():
     Name: _c1, dtype: int64
 
     """
-    return
+    pregunta_3=tbl0.groupby(by='_c1').apply(lambda df: df.shape[0])
+    return pregunta_3
 
 
 def pregunta_04():
