@@ -187,7 +187,7 @@ def pregunta_10():
     pregunta_10=pregunta_10.groupby('_c1').apply(cadena)
     pregunta_10=pregunta_10.reset_index()
     pregunta_10.rename(columns={'_c1':'_c0', 0:'_c1'},inplace=True)
-    return
+    return pregunta_10
 
 
 def pregunta_11():
