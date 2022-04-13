@@ -86,7 +86,9 @@ def pregunta_05():
     E    9
     Name: _c2, dtype: int64
     """
-    return
+    pregunta_5=tbl0.groupby(by='_c1').apply(lambda df: df['_c2'].max())
+    pregunta_5.rename('_c2')
+    return pregunta_5
 
 
 def pregunta_06():
