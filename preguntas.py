@@ -209,7 +209,11 @@ def pregunta_11():
     38   38      d,e
     39   39    a,d,f
     """
-    pregunta_11=tbl1.groupby('_c0').apply(lambda df: ','.join(list(df['_c4'])))
+    def funcion_aux(df):
+        lista=list(df['_c4'])
+        lista.sort()
+        return ','.join(lista)
+    pregunta_11=tbl1.groupby('_c0').apply(funcion_aux)
     pregunta_11=pregunta_11.reset_index()
     pregunta_11.rename(columns={0:'_c4'}, inplace=True)
     return pregunta_11
