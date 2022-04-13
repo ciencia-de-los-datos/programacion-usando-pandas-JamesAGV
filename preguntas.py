@@ -178,16 +178,16 @@ def pregunta_10():
     3   D                  1:2:3:5:5:7
     4   E  1:1:2:3:3:4:5:5:5:6:7:8:8:9
     """
-    pregunta_10=tbl0.copy()
-    pregunta_10['_c22']=pregunta_10['_c2'].apply(lambda x: str(x))
+    pregunta10=tbl0.copy()
+    pregunta10['_c22']=pregunta10['_c2'].apply(lambda x: str(x))
     def cadena(df):
         lista=list(df['_c22'])
         lista.sort()
         return ':'.join(lista)
-    pregunta_10=pregunta_10.groupby('_c1').apply(cadena)
-    pregunta_10=pregunta_10.reset_index()
-    pregunta_10.rename(columns={'_c1':'_c0', 0:'_c1'},inplace=True)
-    return pregunta_10
+    pregunta10=pregunta10.groupby('_c1').apply(cadena)
+    pregunta10=pregunta10.reset_index()
+    pregunta10.rename(columns={'_c1':'_c0', 0:'_c1'},inplace=True)
+    return pregunta10
 
 
 def pregunta_11():
