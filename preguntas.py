@@ -159,7 +159,9 @@ def pregunta_09():
     39   39   E    5  1998-01-26  1998
 
     """
-    return
+    pregunta_9=tbl0.copy()
+    pregunta_9['year']=pregunta_9['_c3'].apply(lambda elemento: elemento.split('-')[0])
+    return pregunta_9
 
 
 def pregunta_10():
