@@ -234,7 +234,17 @@ def pregunta_12():
     38   38                    eee:0,fff:9,iii:2
     39   39                    ggg:3,hhh:8,jjj:5
     """
-    return
+    tabla=tbl2.copy()
+    tabla['_c5b']=tabla['_c5b'].map(lambda x:str(x))
+    tabla['_c5']=tabla['_c5a'] + ':' + tabla['_c5b']
+    def funcion_aux(df):
+        lista=list(df['_c5'])
+        lista.sort()
+        return ','.join(lista)
+    pregunta_12=tabla.groupby(by='_c0').apply(funcion_aux)
+    pregunta_12=pregunta_12.reset_index()
+    pregunta_12.rename(columns={0:'_c5'}, inplace=True)
+    return pregunta_12
 
 
 def pregunta_13():
