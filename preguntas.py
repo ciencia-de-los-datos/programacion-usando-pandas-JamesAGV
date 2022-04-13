@@ -251,4 +251,10 @@ def pregunta_13():
     E    275
     Name: _c5b, dtype: int64
     """
-    return
+    tabla=tbl2.groupby('_c0').apply(lambda df: df['_c5b'].sum())
+    tabla2=tbl0.copy()
+    tabla2['_c4']=tabla
+    tabla2.groupby('_c1').apply(lambda df: df['_c4'].sum())
+    pregunta_13=tabla2.groupby('_c1').apply(lambda df: df['_c4'].sum())
+    pregunta_13.name='_c5b'
+    return pregunta_13
