@@ -139,7 +139,9 @@ def pregunta_08():
     39   39   E    5  1998-01-26    44
 
     """
-    return
+    pregunta_8=tbl0.copy()
+    pregunta_8['suma']=pregunta_8['_c0'] + pregunta_8['_c2']
+    return pregunta_8
 
 
 def pregunta_09():
