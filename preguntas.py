@@ -100,7 +100,10 @@ def pregunta_06():
     ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
     """
-    return
+    lista=list(tbl1['_c4'].unique())
+    lista.sort()
+    pregunta_6=list(map(lambda x: x.upper(), lista))
+    return pregunta_6
 
 
 def pregunta_07():
