@@ -189,8 +189,7 @@ def pregunta_10():
     def replicar(a):
         return a
     pregunta10.rename(columns={0:'_c2', '_c1':'_c0'}, inplace=True)
-    pregunta10=pregunta10.groupby(by='_c0').agg({'_c2':replicar})
-    pregunta10=pregunta10.reset_index()
+    pregunta10=pregunta10.groupby(by=[pregunta10.index,'_c0']).agg({'_c2':replicar})
     return pregunta10
 
 
