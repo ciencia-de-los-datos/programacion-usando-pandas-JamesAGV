@@ -119,7 +119,9 @@ def pregunta_07():
     E    67
     Name: _c2, dtype: int64
     """
-    return
+    pregunta_7=tbl0.groupby(by='_c1').apply(lambda df: df['_c2'].sum())
+    pregunta_7.rename('_c2')
+    return pregunta_7
 
 
 def pregunta_08():
